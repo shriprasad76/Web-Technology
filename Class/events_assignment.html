@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Event Properties Demo</title>
+    
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #box {
+            width: 300px;
+            height: 150px;
+            background-color: lightblue;
+            margin: auto;
+            line-height: 150px;
+            cursor: pointer;
+        }
+        #output {
+            margin-top: 20px;
+            border: 1px solid black;
+            padding: 10px;
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>jQuery Event Object Properties</h2>
+
+<a href="https://www.google.com" id="mylink">Click this Link (Prevent Default)</a>
+
+<br><br>
+
+<div id="box">
+    Click Inside This Box
+</div>
+
+<div id="output">
+    <h3>Event Details:</h3>
+    <p id="result"></p>
+</div>
+
+<script>
+
+$(document).ready(function(){
+
+    // Prevent Default Example
+    $("#mylink").click(function(e){
+        e.preventDefault();
+        alert("Default link action prevented!");
+    });
+
+    // Main Event Handler
+    $("#box").click(function(e){
+
+        var data = "";
+
+        data += "Time Stamp: " + e.timeStamp + "<br>";
+        data += "Target Element: " + e.target.tagName + "<br>";
+        data += "Current Target: " + e.currentTarget.tagName + "<br>";
+
+        if(e.originalEvent.srcElement){
+            data += "Source Element: " + e.originalEvent.srcElement.tagName + "<br>";
+        }
+
+        data += "Client X: " + e.clientX + "<br>";
+        data += "Client Y: " + e.clientY + "<br>";
+
+        data += "Page X: " + e.pageX + "<br>";
+        data += "Page Y: " + e.pageY + "<br>";
+
+        data += "Screen X: " + e.screenX + "<br>";
+        data += "Screen Y: " + e.screenY + "<br>";
+
+        data += "ALT Key Pressed: " + e.altKey + "<br>";
+        data += "CTRL Key Pressed: " + e.ctrlKey + "<br>";
+        data += "SHIFT Key Pressed: " + e.shiftKey + "<br>";
+
+        $("#result").html(data);
+
+    });
+
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Events Demo</title>
+
+    <style>
+        body {
+            background-color: #414141;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 15px;
+        }
+
+        img {
+            width: 200px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        a {
+            color: lightblue;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Amazing Images (Click to Remove)</h2>
+
+    <ul id="images">
+        <li>
+            <img id="photoshop"
+                src="https://upload.wikimedia.org/wikipedia/commons/a/af/Adobe_Photoshop_CC_icon.svg"
+                alt="Photoshop Logo">
+        </li>
+
+        <li>
+            <img id="japan"
+                src="https://images.unsplash.com/photo-1501785888041-af3ef285b470"
+                alt="Mount Fuji">
+        </li>
+
+        <li>
+            <img id="Nature"
+                src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b"
+                alt="Nature Image">
+        </li>
+
+        <li>
+            <img id="photoman"
+                src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee"
+                alt="Photographer">
+        </li>
+
+        <li>
+            <img id="tiger"
+                src="https://images.unsplash.com/photo-1546182990-dffeafbe841d"
+                alt="Tiger">
+        </li>
+
+        <li>
+            <a href="https://google.com" id="google">Visit Google</a>
+        </li>
+    </ul>
+  </body>
+  <script>
+    document.getElementById("japan").addEventListener("click", function() {
+      alert('Mount Fuji is the highest mountain in Japan!');
+    });
+    document.getElementById("images").addEventListener("click", function(e) {
+      console.log("clicking inside the ul");
+    });
+    document.getElementById("Nature").addEventListener("click", function(e) {
+    console.log("clicking nature image");
+    });
+    document.getElementById("Nature").addEventListener("click", function(e) {
+    console.log("clicking inside the ul");
+    });
+    document.getElementById("google").addEventListener("click", function(e) {
+      console.log("google clicked !!");
+        e.preventDefault(); // This will prevent the default action of the link
+      
+      alert("Google link is disabled!");
+    });
+  </script>
+  </html>
+  /*
+  Event is an action that happens in the browser.
+  eg. click, mouseover, keydown, load, etc.
+  Javascript can detect these events and respond to them.
+  types of events:
+  1. Mouse Events: click, dblclick, mouseover, mouseout, mousedown, mouseup
+  2. Keyboard Events: keydown, keyup, keypress              
+  3. browser Events: load, unload, resize, scroll
+        -onClick="alert('Mount Fuji is the highest mountain in Japan!')"
+        -this is not good practice to use inline event handlers, we should use addEventListener instead.
+        -html should content structure js should content logic!!
+        -mixing html and js is not good practice, it makes code hard to maintain and debug.
+    The good way is  document.getElementById("japan").onClick=function(){alert('Mount Fuji is the highest mountain in Japan!')}
+
+1.Home assignmeent is:-
+  J query use
+  time,timestamp,defalt,prevent,target,sourse element,current,client,x,y, screan x,y,alt , crt , shift key
+
+  //Addeventlistner is a javascript method that is used to attach an event handler to an element without overwriting existing event handlers.
+  inner elemnt to the parent element is called event bubbling, and the parent element to the inner element is called event capturing.
+  happens aat child to parent bubble up
+  */
