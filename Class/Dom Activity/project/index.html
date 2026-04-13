@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>A B | Developer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav>
+        <div class="logo">
+            <span class="code-symbol">&lt;/&gt;</span>
+            <h2>A B</h2>
+        </div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section id="home" class="section home">
+    <div class="hero">
+        <h1>Hi, I'm <span>A B</span></h1>
+        <h3 id="typing"></h3>
+        <button onclick="scrollToSection('contact')">Hire Me</button>
+    </div>
+</section>
+
+<section id="about" class="section">
+    <h2>About Me</h2>
+    <p>
+        I am a 3rd Year Computer Science student passionate about 
+        Software Development, Full Stack Development and Problem Solving.
+        I build clean, scalable and optimized applications.
+    </p>
+</section>
+
+<section id="skills" class="section dark">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+        <div class="card">Python</div>
+        <div class="card">React</div>
+        <div class="card">JavaScript</div>
+        <div class="card">HTML</div>
+        <div class="card">CSS</div>
+        <div class="card">MySQL</div>
+        <div class="card">Flask</div>
+        <div class="card">DSA</div>
+    </div>
+</section>
+
+<section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+        <div class="project">
+            <h3>Course Management System</h3>
+            <p>React + Flask + MySQL full stack system with authentication.</p>
+        </div>
+        <div class="project">
+            <h3>Portfolio Website</h3>
+            <p>Modern responsive website using HTML, CSS & JS.</p>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="section dark">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+    <p id="message"></p>
+</section>
+
+<footer>
+    <p>© 2026 A B | All Rights Reserved</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+1. package.json is a configuration file having information about your project, nut packagelog.json having detail information of it.
+2.angular.json is a project configuration file.
+3.style.css is used to create a global css to project.
+4. .gitignore is a version control file.
+5. .editorconfig edit vscode setting
+6.index.html load hrml file that load angular
+7. main.ts is entry point of the app
+8. app.config 
+
+
+variable declaration:-
+   eg.
+        name: String = "Shriprasad"
+
+
+components are a UI blocks, when we create components it creates 4 types as (html, css, ts, specs.cs)
+      eg:- ng generate component component_name
+      where spec.js is  a unit testing file.
+
+
+There are 2 types if data binding:-
+      1. One Way
+      2. Two Way
+
+interpolation:- {{value}}
+property :- [property]="value"
+event :- (event)"handler()"
+two-way:-
+
+data binding means connect UI to code.

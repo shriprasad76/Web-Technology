@@ -1,102 +1,92 @@
-/*
-Activity
-1.Difference in arrow function and simple function
-  - Are we use this keyword ? why?
-2.Write a code with arrow function with example
-3.switch case
-4.truety and falsy values with example
-5.for of and for in difference
-6.how to use lopps in array
-7.filter and map function in java script
-
-*/
-//2.Write a code with arrow function with example
-
+// 2. Arrow function example
 const add = (a, b) => {
     console.log("Addition is " + (a + b));
 };
 
-const square = (x) => x * x;
+const square = x => x * x;
 
-add(3, 4);                 
-console.log(square(5));     
+add(3, 4);
+console.log(square(5));
 
 
-//3.switch case
-let a=10;
-let b=20;
-let ch=2;
+// 3. Switch case
+let a = 10;
+let b = 20;
+let ch = 2;
+
 console.log("1.Addition\n2.Subtraction\n3.Multiplication\n4.Division");
+
 switch (ch) {
-    case "1":
-        console.log("Addition is:"+(parseInt(a)+parseInt(b)));
+    case 1:
+        console.log("Addition is: " + (a + b));
         break;
-    case "2":
-        console.log("Subtraction is:"+(parseInt(a)-parseInt(b)));
+    case 2:
+        console.log("Subtraction is: " + (a - b));
         break;
-    case "3":
-        console.log("Multiplication is:"+(parseInt(a)*parseInt(b)));
+    case 3:
+        console.log("Multiplication is: " + (a * b));
         break;
-    case "4":
-        console.log("Division is:"+(parseInt(a)/parseInt(b)));
+    case 4:
+        console.log("Division is: " + (a / b));
         break;
     default:
         console.log("Invalid choice");
 }
 
-//4.truety and falsy values with example
+
+// 4. Truthy and Falsy values
 let values = [0, 1, "", "Hello", null, undefined, [], {}, NaN];
-for(let i=0;i<values.length;i++)
-{
-    if(values)
-    {
-        console.log("Truely");
-        
-    }
-    else
-    {
-        console.log("Falsy");
+
+for (let i = 0; i < values.length; i++) {
+    if (values[i]) {
+        console.log(values[i] + " -> Truthy");
+    } else {
+        console.log(values[i] + " -> Falsy");
     }
 }
 
-//loops in js
-let arr=[10,20,30,40,50];
-let i=0;
-//for loop
-for(i=0;i<arr.length;i++)
-{
+
+// 6. Loops in array
+let arr = [10, 20, 30, 40, 50];
+
+// for loop
+for (let i = 0; i < arr.length; i++) {
     console.log(arr[i]);
 }
 
-//while loop
-i=0;
-while(i<arr.length)
-{
+// while loop
+let i = 0;
+while (i < arr.length) {
     console.log(arr[i]);
     i++;
 }
 
-//do while loop
-i=0;
-do{
+// do while loop
+i = 0;
+do {
     console.log(arr[i]);
     i++;
-}while(i<arr.length);
+} while (i < arr.length);
 
-//for of loop
-for(let val of arr)
-{
+// for of
+for (let val of arr) {
     console.log(val);
 }
 
-//for in loop
-for(let index in arr)
-{
+// for in
+for (let index in arr) {
     console.log(arr[index]);
 }
 
-//foreach loop
-let array=[100,200,300,400,500];
-array.forEach(element => {
-    console.log(element);
-});
+// forEach
+arr.forEach(e => console.log(e));
+
+
+// 7. map and filter
+let nums = [1, 2, 3, 4, 5];
+
+let doubled = nums.map(n => n * 2);
+console.log("Doubled:", doubled);
+
+let even = nums.filter(n => n % 2 === 0);
+console.log("Even:", even);

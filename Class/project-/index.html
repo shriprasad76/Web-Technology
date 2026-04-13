@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Java Practice Test</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+<h1>Java Practice Test</h1>
+
+<div id="userForm">
+<input type="text" id="name" placeholder="Enter Full Name">
+<input type="text" id="prn" placeholder="Enter PRN Number">
+<button onclick="startTest()">Start Test</button>
+</div>
+
+<div id="quizBox" class="hide">
+<h2 id="question"></h2>
+
+<div id="options"></div>
+
+<textarea id="codeAns" placeholder="Write your Java syntax here"></textarea>
+
+<p id="message"></p>
+
+<button onclick="submitAns()">Submit Answer</button>
+<button onclick="nextQ()">Next Question</button>
+</div>
+
+<div id="result" class="hide">
+<h2>Result</h2>
+<p id="resName"></p>
+<p id="resPrn"></p>
+<p id="resScore"></p>
+<p id="resPer"></p>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body

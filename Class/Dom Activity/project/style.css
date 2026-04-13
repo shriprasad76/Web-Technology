@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    scroll-behavior: smooth;
+    background: #0f0f0f;
+    color: white;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(10px);
+    padding: 15px 50px;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo h2 {
+    color: white;
+}
+
+.code-symbol {
+    color: #00f7ff;
+    font-weight: bold;
+    font-size: 22px;
+    animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00f7ff;
+}
+
+.section {
+    padding: 120px 60px;
+    text-align: center;
+}
+
+.home {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #00f7ff, #0066ff);
+    color: white;
+}
+
+.home span {
+    color: yellow;
+}
+
+button {
+    padding: 12px 25px;
+    border: none;
+    background: #000;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #00f7ff;
+    color: black;
+}
+
+.dark {
+    background: #111;
+}
+
+.skills-grid, .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.card, .project {
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.card:hover, .project:hover {
+    transform: translateY(-10px);
+    background: #00f7ff;
+    color: black;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 30px auto;
+}
+
+input, textarea {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+}
+
+footer {
+    background: black;
+    padding: 20px;
+    text-align: center;
+}

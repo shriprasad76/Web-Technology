@@ -1,0 +1,105 @@
+body {
+margin:0;
+font-family:Arial;
+scroll-behavior:smooth;
+}
+
+header {
+background:#002147;
+color:white;
+padding:20px;
+text-align:center;
+position:fixed;
+width:100%;
+top:0;
+}
+
+nav ul {
+list-style:none;
+display:flex;
+justify-content:center;
+}
+
+nav ul li {
+margin:10px;
+}
+
+nav ul li a {
+color:white;
+text-decoration:none;
+}
+
+.home {
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(to right,#0077b6,#00b4d8);
+color:white;
+text-align:center;
+margin-top:80px;
+}
+
+.club-container {
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+padding:40px;
+}
+
+.club-card {
+width:200px;
+padding:20px;
+background:#90e0ef;
+border-radius:10px;
+text-align:center;
+transition:0.3s;
+}
+
+.club-card:hover {
+transform:scale(1.05);
+}
+
+.event-container {
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+padding:40px;
+}
+
+.event-card {
+width:220px;
+padding:20px;
+background:#caf0f8;
+border-radius:10px;
+text-align:center;
+}
+
+form {
+display:flex;
+flex-direction:column;
+width:300px;
+margin:auto;
+gap:10px;
+}
+
+input,select {
+padding:10px;
+}
+
+button {
+padding:10px;
+background:#0077b6;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+footer {
+background:#002147;
+color:white;
+text-align:center;
+padding:10px;
+}
