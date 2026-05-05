@@ -1,0 +1,19 @@
+.card h2 {
+  margin-top: 0;
+}
+
+ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+.selected {
+  margin-top: 14px;
+  padding: 10px;
+  background-color: #e3f2fd;
+  border-radius: 5px;
+}

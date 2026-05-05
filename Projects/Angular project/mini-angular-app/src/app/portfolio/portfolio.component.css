@@ -1,0 +1,13 @@
+.card h2 {
+  margin-top: 0;
+}
+.project {
+  margin-bottom: 16px;
+  padding: 12px;
+  border: 1px solid #dfe3e8;
+  border-radius: 8px;
+  background: #fff;
+}
+.project h3 {
+  margin: 0 0 6px;
+}

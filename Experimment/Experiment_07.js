@@ -1,8 +1,8 @@
 // Simple array of objects
 var students = [
-    { name: "Shri Patil", age: 20, grade: "A" },
-    { name: "Ganesh Mali", age: 22, grade: "B" },
-    { name: "Sarthak Patil", age: 21, grade: "C" },
+    { name: "Aditya Suryakar", age: 20, grade: "A" },
+    { name: "Satyajeet Patil", age: 22, grade: "B" },
+    { name: "Varad Sonad", age: 21, grade: "C" },
     { name: "Yash Patil", age: 23, grade: "A" }
 ];
 
@@ -22,15 +22,15 @@ const port = 3000;
 
 // Array of student objects
 const studentsData = [
-    { name: "Shri Patil", age: 20, email: "shri@example.com" },
-    { name: "Ganesh Mali", age: 22, email: "ganesh@example.com" },
-    { name: "Sarthak Patil", age: 21, email: "sarthak@example.com" },
+    { name: "Aditya Suryakar", age: 20, email: "aditya@example.com" },
+    { name: "Satyajeet Patil", age: 22, email: "satyajeet@example.com" },
+    { name: "Varad Sonad", age: 21, email: "varad@example.com" },
     { name: "Yash Patil", age: 23, email: "yash@example.com" }
 ];
 
 // Home route
 app.get('/', (req, res) => {
-    res.send("Welcome Shriprasad !!!")
+    res.send("Welcome Aditya !!!")
 });
 
 // Route to get all students

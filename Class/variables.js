@@ -26,7 +26,7 @@ const c = 70;
 // These store single values
 
 let numberType = 104;        // number
-let stringType = "Shri";   // string
+let stringType = "Shri";    // string
 let booleanType = true;     // boolean
 let nullType = null;        // null
 let undefinedType;          // undefined

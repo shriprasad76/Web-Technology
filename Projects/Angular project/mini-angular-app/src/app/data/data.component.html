@@ -1,0 +1,12 @@
+<section class="card">
+  <h2>Data Binding</h2>
+  <p>Click an item to see one-way binding in action.</p>
+  <ul>
+    <li *ngFor="let item of items">
+      <button (click)="selectItem(item.title)">{{ item.title }}</button>
+    </li>
+  </ul>
+  <div *ngIf="selectedTitle" class="selected">
+    Selected: <strong>{{ selectedTitle }}</strong>
+  </div>
+</section>

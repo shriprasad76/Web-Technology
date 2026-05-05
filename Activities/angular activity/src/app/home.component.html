@@ -1,0 +1,68 @@
+<section class="hero">
+  <h1>Student Activity Showcase</h1>
+  
+</section>
+
+<section class="card-section">
+  <h2>Student Profile </h2>
+  <div class="student-card">
+    <div class="student-details">
+      <h3>{{ student.name }}</h3>
+      <p><strong>Course:</strong> {{ student.course }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="input-preview">
+  <h2> Live Input Preview</h2>
+  <label for="previewInput">Type below:</label>
+  <input id="previewInput" type="text" [(ngModel)]="liveText" placeholder="Start typing..." />
+  <p class="preview">Preview: {{ liveText }}</p>
+  <p class="count">Character count: {{ liveText.length }}</p>
+</section>
+
+<section class="div-activity">
+  <h2> Div Activity</h2>
+  <button type="button" (click)="showDetails.update((value) => !value)">
+    {{ showDetails() ? 'Hide' : 'Show' }} details
+  </button>
+
+  <div *ngIf="showDetails(); else hiddenBlock" class="details-box">
+    <p>This section is controlled by <code>*ngIf</code>.</p>
+    <div [ngSwitch]="activePanel()" class="switch-panels">
+      <button type="button" (click)="activePanel.set('overview')">Overview</button>
+      <button type="button" (click)="activePanel.set('notes')">Notes</button>
+      <button type="button" (click)="activePanel.set('tips')">Tips</button>
+    </div>
+    <div class="panel-content">
+      <div *ngSwitchCase="'overview'">Use <code>*ngFor</code>, <code>*ngIf</code>, and <code>[ngSwitch]</code> together to build dynamic UI.</div>
+      <div *ngSwitchCase="'notes'">Angular directives let you show and hide content, repeat lists, and switch views in the template.</div>
+      <div *ngSwitchCase="'tips'">Try clicking the buttons to see how the directive behavior changes.</div>
+      <div *ngSwitchDefault>Select a panel to continue.</div>
+    </div>
+  </div>
+
+  <ng-template #hiddenBlock>
+    <div class="details-box muted">Details are hidden. Click the button to show them again.</div>
+  </ng-template>
+
+  <div class="box-grid">
+    <div class="box" *ngFor="let box of [{ title: 'HTML', color: '#FFE5B4' }, { title: 'CSS', color: '#B3E5FC' }, { title: 'TS', color: '#D1C4E9' }]" [style.background]="box.color">
+      {{ box.title }} block
+    </div>
+  </div>
+</section>
+
+<section class="api-section">
+  <h2> API Integration</h2>
+  <button type="button" (click)="fetchUsers()">Reload Users</button>
+
+  <div class="spinner" *ngIf="loading()">Loading users…</div>
+  <div class="error" *ngIf="error()">{{ error() }}</div>
+
+  <ul *ngIf="!loading() && !error()">
+    <li *ngFor="let user of users()">
+      <strong>{{ user.name }}</strong><span>{{ user.email }}</span>
+    </li>
+  </ul>
+</section>

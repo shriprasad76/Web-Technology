@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Student Practical Evaluation System</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-box">
+      <h1>📚 Practical Lab</h1>
+      <p>Student Practical Evaluation System</p>
+      
+      <div class="alert" id="alertBox"></div>
+
+      <!-- Login/Signup Toggle -->
+      <div class="login-toggle">
+        <button class="toggle-btn active" id="loginToggle">🔐 Login</button>
+        <button class="toggle-btn" id="signupToggle">✍️ Sign Up</button>
+      </div>
+
+      <!-- Role Selection Tabs -->
+      <div class="role-tabs" id="loginRoleTabs">
+        <button class="role-tab active" data-role="admin">Admin</button>
+        <button class="role-tab" data-role="teacher">Teacher</button>
+        <button class="role-tab" data-role="student">Student</button>
+      </div>
+
+      <!-- Sign Up Role Selection -->
+      <div class="role-tabs hidden" id="signupRoleTabs">
+        <button class="role-tab active" data-signup-role="teacher">👨‍🏫 Teacher</button>
+        <button class="role-tab" data-signup-role="student">🎓 Student</button>
+      </div>
+
+      <!-- Admin Login Form -->
+      <form id="adminLoginForm" class="login-form">
+        <div class="form-group">
+          <label for="adminUsername">Username</label>
+          <input type="text" id="adminUsername" placeholder="Enter admin username" required>
+        </div>
+        <div class="form-group">
+          <label for="adminPassword">Password</label>
+          <input type="password" id="adminPassword" placeholder="Enter password" required>
+        </div>
+        <button type="submit" class="login-btn">Login as Admin</button>
+      </form>
+
+      <!-- Teacher Login Form -->
+      <form id="teacherLoginForm" class="login-form hidden">
+        <div class="form-group">
+          <label for="teacherEmail">Email</label>
+          <input type="email" id="teacherEmail" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label for="teacherPassword">Password</label>
+          <input type="password" id="teacherPassword" placeholder="Enter password" required>
+        </div>
+        <button type="submit" class="login-btn">Login as Teacher</button>
+      </form>
+
+      <!-- Student Login Form -->
+      <form id="studentLoginForm" class="login-form hidden">
+        <div class="form-group">
+          <label for="studentPRN">PRN (Student ID)</label>
+          <input type="text" id="studentPRN" placeholder="Enter your PRN" required>
+        </div>
+        <div class="form-group">
+          <label for="studentPassword">Password</label>
+          <input type="password" id="studentPassword" placeholder="Enter password (default: student123)" required>
+        </div>
+        <button type="submit" class="login-btn">Login as Student</button>
+      </form>
+
+      <!-- Teacher Sign Up Form -->
+      <form id="teacherSignupForm" class="login-form hidden">
+        <h3 style="color: var(--primary-color); text-align: center; margin-bottom: 20px;">👨‍🏫 Teacher Registration</h3>
+        <div class="form-group">
+          <label for="signupName">Full Name</label>
+          <input type="text" id="signupName" placeholder="Enter your full name" required>
+        </div>
+        <div class="form-group">
+          <label for="signupEmail">Email</label>
+          <input type="email" id="signupEmail" placeholder="Enter your email" required>
+        </div>
+        <div class="form-group">
+          <label for="signupPassword">Password</label>
+          <input type="password" id="signupPassword" placeholder="Create a password (min 6 chars)" required>
+        </div>
+        <div class="form-group">
+          <label for="signupConfirmPassword">Confirm Password</label>
+          <input type="password" id="signupConfirmPassword" placeholder="Confirm password" required>
+        </div>
+        <button type="submit" class="login-btn">Sign Up as Teacher</button>
+        <p style="text-align: center; font-size: 12px; color: #666; margin-top: 10px;">Already have an account? Click "Login" tab</p>
+      </form>
+
+      <!-- Student Sign Up Form -->
+      <form id="studentSignupForm" class="login-form hidden">
+        <h3 style="color: var(--primary-color); text-align: center; margin-bottom: 20px;">🎓 Student Registration</h3>
+        <div class="form-group">
+          <label for="studentSignupName">Full Name</label>
+          <input type="text" id="studentSignupName" placeholder="Enter your full name" required>
+        </div>
+        <div class="form-group">
+          <label for="studentSignupPRN">PRN</label>
+          <input type="text" id="studentSignupPRN" placeholder="Enter your PRN" required>
+        </div>
+        <div class="form-group">
+          <label for="studentSignupBranch">Branch</label>
+          <input type="text" id="studentSignupBranch" placeholder="Branch (optional)">
+        </div>
+        <div class="form-group">
+          <label for="studentSignupYear">Year</label>
+          <input type="number" id="studentSignupYear" placeholder="Year (optional)">
+        </div>
+        <div class="form-group">
+          <label for="studentSignupDivision">Division</label>
+          <input type="text" id="studentSignupDivision" placeholder="Division (optional)">
+        </div>
+        <div class="form-group">
+          <label for="studentSignupPassword">Password</label>
+          <input type="password" id="studentSignupPassword" placeholder="Choose a password" required>
+        </div>
+        <div class="form-group">
+          <label for="studentSignupConfirmPassword">Confirm Password</label>
+          <input type="password" id="studentSignupConfirmPassword" placeholder="Confirm password" required>
+        </div>
+        <button type="submit" class="login-btn">Sign Up as Student</button>
+        <p style="text-align: center; font-size: 12px; color: #666; margin-top: 10px;">Already have an account? Click "Login" tab</p>
+      </form>
+
+     
+    </div>
+  </div>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>

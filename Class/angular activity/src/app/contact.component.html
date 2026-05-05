@@ -1,0 +1,30 @@
+<section class="page-block">
+  <h1>Contact</h1>
+  <p>Use this form to practice two-way binding and form interaction.</p>
+
+  <form (ngSubmit)="submitForm()" class="contact-form">
+    <label>
+      Name
+      <input type="text" [(ngModel)]="name" name="name" placeholder="Your name" />
+    </label>
+
+    <label>
+      Email
+      <input type="email" [(ngModel)]="email" name="email" placeholder="you@example.com" />
+    </label>
+
+    <label>
+      Message
+      <textarea [(ngModel)]="message" name="message" rows="4" placeholder="Write a message"></textarea>
+    </label>
+
+    <button type="submit">Send Message</button>
+  </form>
+
+  <div class="result" *ngIf="submitted">
+    <h2>Message Ready</h2>
+    <p><strong>Name:</strong> {{ name }}</p>
+    <p><strong>Email:</strong> {{ email }}</p>
+    <p><strong>Message:</strong> {{ message }}</p>
+  </div>
+</section>

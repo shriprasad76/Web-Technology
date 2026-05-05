@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WebSocket Chat</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      max-width: 700px;
+    }
+    h1 {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+    #chatForm {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    #message {
+      flex: 1;
+      padding: 8px;
+      font-size: 16px;
+    }
+    button {
+      padding: 8px 16px;
+      font-size: 16px;
+    }
+    #messages {
+      list-style: disc inside;
+      padding-left: 0;
+    }
+    #messages li {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>WebSocket Chat</h1>
+
+  <form id="chatForm">
+    <input id="message" type="text" placeholder="Enter message" autocomplete="off" required />
+    <button type="submit">Send</button>
+  </form>
+
+  <ul id="messages"></ul>
+
+  <script>
+    const messagesList = document.getElementById('messages');
+    const messageInput = document.getElementById('message');
+    const chatForm = document.getElementById('chatForm');
+
+    const ws = new WebSocket('ws://' + window.location.host);
+
+    function addMessage(text) {
+      const li = document.createElement('li');
+      li.textContent = text;
+      messagesList.appendChild(li);
+    }
+
+    ws.addEventListener('open', () => {
+      addMessage('Connected to server.');
+    });
+
+    ws.addEventListener('message', (event) => {
+      addMessage(event.data);
+    });
+
+    ws.addEventListener('close', () => {
+      addMessage('Disconnected from server.');
+    });
+
+    chatForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const message = messageInput.value.trim();
+      if (!message) return;
+      ws.send(message);
+      messageInput.value = '';
+    });
+  </script>
+</body>
+</html>

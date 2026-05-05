@@ -1,0 +1,122 @@
+
+
+1. Activity: Understanding Types of Components
+
+
+Functional Components**
+These are simple JavaScript functions that return JSX. They are widely used in modern React development.
+
+function Welcome() {
+  return <h1>Hello, this is a Functional Component</h1>;
+}
+export default Welcome;
+
+
+ Class Components
+These are ES6 classes that extend `React.Component` and include a render method.
+
+
+import React, { Component } from 'react';
+
+class Greeting extends Component {
+  render() {
+    return <h1>Hello, this is a Class Component</h1>;
+  }
+}
+export default Greeting;
+
+
+
+
+2. Activity: Understanding Props
+
+Props are read-only.
+They help make components reusable.
+
+
+function Student(props) {
+  return <h2>Student Name: {props.name}</h2>;
+}
+
+function App() {
+  return (
+    <div>
+      <Student name="Shriprasad" />
+      <Student name="Rahul" />
+    </div>
+  );
+}
+
+export default App;
+
+
+
+
+3. Activity: Understanding State Concept
+
+
+import React, { useState } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <h2>Count: {count}</h2>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+}
+
+
+
+ Toggle Visibility
+
+
+import React, { useState } from 'react';
+
+function Toggle() {
+  const [show, setShow] = useState(true);
+
+  return (
+    <div>
+      <button onClick={() => setShow(!show)}>Toggle</button>
+      {show && <p>This text is visible</p>}
+    </div>
+  );
+}
+
+
+
+4. Activity: Understanding Hooks Concept
+
+
+
+
+a) useState Hook**
+Used to manage state.
+
+
+const [value, setValue] = useState("");
+
+
+b) useEffect Hook
+Used to perform side effects like fetching data.
+
+
+import React, { useState, useEffect } from 'react';
+
+function Timer() {
+  const [time, setTime] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTime(prev => prev + 1);
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return <h2>Time: {time}</h2>;
+}
+

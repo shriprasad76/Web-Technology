@@ -1,0 +1,36 @@
+{
+  "$schema": "https://angular.io/cli/schema.json",
+  "version": 1,
+  "projects": {
+    "mini-angular-app": {
+      "projectType": "application",
+      "root": "",
+      "sourceRoot": "src",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/mini-angular-app",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.json",
+            "assets": [],
+            "styles": ["src/styles.css"],
+            "scripts": []
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "mini-angular-app:build"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "mini-angular-app",
+  "cli": {
+    "analytics": "eed592a0-36f9-481f-b7ec-ddd16b0f6c88"
+  }
+}
